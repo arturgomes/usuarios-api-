@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { v4 as uuidv4 } from 'uuid';
-
+import cors from 'cors';
 interface User {
   id: string;
   nome: string;
@@ -19,6 +19,7 @@ interface User {
 }
 
 const app = express();
+app.use(cors())
 app.use(bodyParser.json());
 const nomes = [
   "Maria",
