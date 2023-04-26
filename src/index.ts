@@ -227,7 +227,7 @@ app.get('/users/id/:id', (req, res) => {
 });
 
 // endpoint para listar usuário por nome
-app.get('/users/nome', (req, res) => {
+app.post('/users/nome', (req, res) => {
   const { nome } = req.body;
   const filteredUsers = users.filter(user => user.nome.toLowerCase().includes(nome.toLowerCase()));
   console.log(filteredUsers)
@@ -240,7 +240,7 @@ app.get('/users/nome', (req, res) => {
 });
 
 // endpoint para listar usuários com IMC acima de um valor específico
-app.get('/users/imc', (req, res) => {
+app.post('/users/imc', (req, res) => {
   const { imc } = req.body;
 
   const filteredUsers = users.filter(user => {
